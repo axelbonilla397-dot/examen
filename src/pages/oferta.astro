@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CardProduct from "../components/products/CardProduct.astro";
+import { products } from "../data/products";
+
+const ofertaCars = products.filter((car) => car.oferta);
+---
+
+<Layout title="Ofertas | AUTOCAR">
+  <div class="bg-white min-h-screen pb-20 pt-10">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h1 class="text-3xl font-bold mb-10">Ofertas Especiales</h1>
+
+      <main class="py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-in">
+          {ofertaCars.length > 0 ? (
+            ofertaCars.map(car => (
+              <CardProduct
+                title={car.marca + " " + car.modelo}
+                price={car.price}
+                offerPrice={car.oferta} 
+                images={car.images || [car.imagen]}
+                stock={car.stock || 1}
+                slug={car.slug || car.modelo.toLowerCase().replace(/\s+/g, "-")}
+                badge="LIQUIDACIÓN" 
+              />
+            ))
+          ) : (
+            <div class="col-span-full text-center py-24 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
+              <p class="text-slate-400 font-bold uppercase tracking-widest">
+                No hay ofertas disponibles
+              </p>
+            </div>
+          )}
+        </div>
+      </main>
+
+    </div>
+  </div>
+</Layout>

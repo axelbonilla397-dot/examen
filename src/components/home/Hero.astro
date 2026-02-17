@@ -1,0 +1,201 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="relative w-full overflow-hidden">
+    <!-- Swiper Container -->
+    <div class="swiper hero-swiper h-[350px] sm:h-[450px] md:h-[500px]">
+        <div class="swiper-wrapper">
+            <!-- Slide 1: Laptops -->
+            <div class="swiper-slide relative">
+                <img
+                    src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Luxury Laptops"
+                    class="absolute inset-0 w-full h-full object-cover"
+                />
+                <div
+                    class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4"
+                >
+                    <div class="max-w-3xl animate-fade-in">
+                        <h2
+                            class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
+                        >
+                            Bienvenido a AutoCar
+                        </h2>
+                        <p
+                            class="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto"
+                        >
+                            En AutoCar nos especialziamos en ofreces vehiculos de calidad,
+                            cuidadosamente seleccionados y listos para brindarte seguridad,
+                            confianza y el mejor precio del mercado.
+                        </p>
+                        <a
+                            href="/category/computers"
+                            class="btn btn-primary btn-lg rounded-full px-8 shadow-xl hover:scale-105 transition-transform"
+                        >
+                            Ver catalogo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Smartphones -->
+            <div class="swiper-slide relative">
+                <img
+                    src="https://i.pinimg.com/originals/88/88/fc/8888fc2781e907156b3f22f78b2c079c.jpg"
+                    alt="Modern Smartphones"
+                    class="absolute inset-0 w-full h-full object-cover"
+                />
+                <div
+                    class="absolute inset-0 bg-linear-to-r from-black/60 to-transparent flex items-center justify-start px-8 md:px-24"
+                >
+                    <div class="max-w-2xl text-left">
+                        <span
+                            class="badge badge-primary mb-4 p-4 font-bold uppercase tracking-widest"
+                            >Promociones</span
+                        >
+                        <h2
+                            class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
+                        >
+                            Ofertas exclusivas del mes
+                        </h2>
+                        <p class="text-lg md:text-xl text-white/90 mb-8">
+                            Aprovecha nuestras promociones especiales en vehiculos 
+                            seleccionados. Precios reducidos y opciones de financiamiento
+                            disponibles por tiempo limitado
+                        </p>
+                        <a
+                            href="/category/phones"
+                            class="btn btn-secondary btn-lg rounded-full px-8 shadow-xl hover:scale-105 transition-transform"
+                        >
+                            Ver Ofertas
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Gaming -->
+            <div class="swiper-slide relative">
+                <img
+                    src="https://digitalxwarlock.com/wp-content/uploads/2024/08/Asesoria-Personalizada-1024x683.webp"
+                    alt="Gaming Gear"
+                    class="absolute inset-0 w-full h-full object-cover"
+                />
+                <div
+                    class="absolute inset-0 bg-black/50 flex items-center justify-center text-center px-4"
+                >
+                    <div class="max-w-3xl">
+                        <h2
+                            class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
+                        >
+                            Confianza y Respaldo Garantizado
+                        </h2>
+                        <p
+                            class="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto"
+                        >
+                            En AutoCar te acompañamos durante todo el proceso de compra.
+                            Nuestro compromiso es ofrecerte transparencia, asesoría personalizada
+                            y vehiculos listos para que conduzcas con tranquilidad.
+
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a
+                                href="/shop/gaming"
+                                class="btn btn-primary btn-lg rounded-full px-8 shadow-xl hover:shadow-primary/20 transition-all"
+                            >
+                                Ver Financiamientos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div
+            class="hero-next text-white! w-10 h-10 hover:scale-110 transition-transform hidden sm:flex items-center justify-center bg-black/20 hover:bg-black/40 rounded-full cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 z-50"
+        >
+            <Icon name="lucide:chevron-right" class="w-6 h-6" />
+        </div>
+        <div
+            class="hero-prev text-white! w-10 h-10 hover:scale-110 transition-transform hidden sm:flex items-center justify-center bg-black/20 hover:bg-black/40 rounded-full cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 z-50"
+        >
+            <Icon name="lucide:chevron-left" class="w-6 h-6" />
+        </div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination bottom-8!"></div>
+    </div>
+</section>
+
+<!-- Swiper Styles -->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<style>
+    /* Custom Swiper Pagination Colors */
+    :root {
+        --swiper-pagination-color: var(--color-primary);
+        --swiper-pagination-bullet-inactive-color: #fff;
+        --swiper-pagination-bullet-inactive-opacity: 0.5;
+        --swiper-pagination-bullet-size: 10px;
+        --swiper-pagination-bullet-horizontal-gap: 6px;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 24px;
+        border-radius: 5px;
+        transition: width 0.3s ease;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 1s ease-out forwards;
+    }
+</style>
+
+<script>
+    import Swiper from "swiper";
+    import {
+        Navigation,
+        Pagination,
+        Autoplay,
+        EffectFade,
+    } from "swiper/modules";
+
+    const initHeroSwiper = () => {
+        new Swiper(".hero-swiper", {
+            modules: [Navigation, Pagination, Autoplay, EffectFade],
+            loop: true,
+            effect: "fade",
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".hero-next",
+                prevEl: ".hero-prev",
+            },
+        });
+    };
+
+    // Initialize on load and after view transitions
+    initHeroSwiper();
+    document.addEventListener("astro:after-swap", initHeroSwiper);
+</script>
