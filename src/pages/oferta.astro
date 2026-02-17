@@ -19,7 +19,7 @@ const ofertaCars = products.filter((car) => car.oferta);
               <CardProduct
                 title={car.marca + " " + car.modelo}
                 price={car.price}
-                offerPrice={car.oferta} 
+                oferta={car.oferta} 
                 images={car.images || [car.imagen]}
                 stock={car.stock || 1}
                 slug={car.slug || car.modelo.toLowerCase().replace(/\s+/g, "-")}
